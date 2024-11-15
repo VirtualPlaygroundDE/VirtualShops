@@ -1,0 +1,17 @@
+name: VirtualShops
+version: '1.0.0'
+main: de.virtualplayground.shop.VirtualShops
+api-version: '1.21'
+authors: [ MrMending ]
+dependencies:
+  server:
+    VirtualAPI:
+      load: BEFORE
+      required: true
+    CommandAPI:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    FancyNpcs:
+      load: BEFORE
+      required: true

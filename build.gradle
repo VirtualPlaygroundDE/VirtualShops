@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.virtualplayground'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/groups/public/"
+    }
+    maven { url 'https://jitpack.io' } // Jitpack: Virtual API
+    maven { url = 'https://repo.codemc.org/repository/maven-public/' } // CommandAPI
+    maven { url = 'https://repo.fancyplugins.de/releases' } // FancyNpcs
+}
+
+dependencies {
+
+    // Paper
+    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+
+    // Libs & APIs
+    compileOnly 'com.github.VirtualPlaygroundDE:VirtualAPI:1.1.4'
+    compileOnly 'dev.jorel:commandapi-bukkit-core:9.6.0'
+    compileOnly 'de.oliver:FancyNpcs:2.4.0'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    testCompileOnly 'org.projectlombok:lombok:1.18.36'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+}
+
+def targetJavaVersion = 21
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release.set(targetJavaVersion)
+    }
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('paper-plugin.yml') {
+        expand props
+    }
+}

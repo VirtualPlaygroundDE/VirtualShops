@@ -1,0 +1,137 @@
+Holz:
+  '1':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: OAK_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '2':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: CHERRY_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '3':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: MANGROVE_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '4':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: DARK_OAK_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '5':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: ACACIA_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '6':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: JUNGLE_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '7':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: BIRCH_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
+  '8':
+    result:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: SPRUCE_LOG
+      amount: 16
+    ingredients:
+      - ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+        meta:
+          ==: ItemMeta
+          meta-type: UNSPECIFIC
+          display-name: '{"text":"VP Coins","italic":false,"color":"gold","bold":true}'
+          lore:
+            - '{"text":"Wert: ","extra":[{"text":"5","color":"yellow"}],"italic":false,"color":"gray"}'
+          custom: H4sIAAAAAAAA/+NiYOBg4EwuLS7Jz43PTGFgT87PzCuON2UAAMMeqGkZAAAA
