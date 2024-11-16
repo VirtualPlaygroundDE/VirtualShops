@@ -16,7 +16,7 @@ public class NpcListener implements Listener {
     @EventHandler
     public void onNpcInteract(NpcInteractEvent e) {
         if (plugin.getShopConfig().getShops().containsKey(e.getNpc().getData().getName())) {
-            plugin.getShopConfig().getShops().get(e.getNpc().getData().getName()).open(e.getPlayer());
+            plugin.getShopConfig().getShops().get(e.getNpc().getData().getName()).getGui().open(e.getPlayer());
         }
     }
 

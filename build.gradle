@@ -26,7 +26,7 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
 
     // Libs & APIs
-    compileOnly 'com.github.VirtualPlaygroundDE:VirtualAPI:1.1.4'
+    compileOnly 'com.github.VirtualPlaygroundDE:VirtualAPI:1.2.0'
     compileOnly 'dev.jorel:commandapi-bukkit-core:9.6.0'
     compileOnly 'de.oliver:FancyNpcs:2.4.0'
 
