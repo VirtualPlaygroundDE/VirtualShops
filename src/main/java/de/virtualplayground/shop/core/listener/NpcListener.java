@@ -1,4 +1,4 @@
-package de.virtualplayground.shop.listener;
+package de.virtualplayground.shop.core.listener;
 
 import de.oliver.fancynpcs.api.events.NpcInteractEvent;
 import de.virtualplayground.shop.VirtualShops;
@@ -15,8 +15,8 @@ public class NpcListener implements Listener {
 
     @EventHandler
     public void onNpcInteract(NpcInteractEvent e) {
-        if (plugin.getShopConfig().getShops().containsKey(e.getNpc().getData().getName())) {
-            plugin.getShopConfig().getShops().get(e.getNpc().getData().getName()).getGui().open(e.getPlayer());
+        if (plugin.getPlayerShopConfig().getShops().containsKey(e.getNpc().getData().getName())) {
+            plugin.getPlayerShopConfig().getShops().get(e.getNpc().getData().getName()).getGui().open(e.getPlayer());
         }
     }
 

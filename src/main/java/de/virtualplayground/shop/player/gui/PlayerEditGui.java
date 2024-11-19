@@ -1,23 +1,23 @@
-package de.virtualplayground.shop.gui;
+package de.virtualplayground.shop.player.gui;
 
 import de.virtualplayground.lib.gui.Gui;
 import de.virtualplayground.lib.gui.GuiIcon;
 import de.virtualplayground.lib.lang.Lang;
 import de.virtualplayground.shop.VirtualShops;
-import de.virtualplayground.shop.trade.Trade;
-import de.virtualplayground.shop.trade.TradeShop;
+import de.virtualplayground.shop.player.PlayerTrade;
+import de.virtualplayground.shop.player.PlayerShop;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class EditGui extends Gui {
+public class PlayerEditGui extends Gui {
 
     private final VirtualShops plugin;
-    private final TradeShop shop;
+    private final PlayerShop shop;
 
-    public EditGui(TradeShop shop, VirtualShops plugin) {
+    public PlayerEditGui(PlayerShop shop, VirtualShops plugin) {
         super(Component.text(shop.getName()), 3);
         this.shop = shop;
         this.plugin = plugin;
@@ -26,10 +26,10 @@ public class EditGui extends Gui {
     @Override
     public void onOpen(InventoryOpenEvent event) {
         int slot = 0;
-        for (Trade trade : shop.getTrades()) {
-            setItem(slot, new GuiIcon(trade.result()).setFixed(false));
+        for (PlayerTrade playerTrade : shop.getPlayerTrades()) {
+            setItem(slot, new GuiIcon(playerTrade.result()).setFixed(false));
             int offset = slot + 9;
-            for (ItemStack ingredient : trade.ingredients()) {
+            for (ItemStack ingredient : playerTrade.ingredients()) {
                 setItem(offset, new GuiIcon(ingredient).setFixed(false));
                 offset += 9;
             }
@@ -41,7 +41,7 @@ public class EditGui extends Gui {
     @Override
     public void onClose(InventoryCloseEvent event) {
 
-        shop.getTrades().clear();
+        shop.getPlayerTrades().clear();
 
         for (int slot = 0; slot < 9; slot++) {
 
@@ -51,20 +51,20 @@ public class EditGui extends Gui {
 
             if (result != null && ingredient1 != null && !ingredient1.getType().equals(Material.AIR)) {
 
-                Trade trade;
+                PlayerTrade playerTrade;
 
                 if (ingredient2 != null && !ingredient2.getType().equals(Material.AIR)) {
-                    trade = new Trade(result, ingredient1, ingredient2);
+                    playerTrade = new PlayerTrade(result, ingredient1, ingredient2);
                 } else {
-                    trade = new Trade(result, ingredient1);
+                    playerTrade = new PlayerTrade(result, ingredient1);
                 }
 
-                shop.getTrades().add(trade);
+                shop.getPlayerTrades().add(playerTrade);
             }
         }
 
-        plugin.getShopConfig().save();
-        plugin.getShopConfig().reload();
+        plugin.getPlayerShopConfig().save();
+        plugin.getPlayerShopConfig().reload();
         event.getPlayer().sendMessage(Lang.parse("Shop <yellow>" + shop.getName() + " <gray>gespeichert."));
     }
 

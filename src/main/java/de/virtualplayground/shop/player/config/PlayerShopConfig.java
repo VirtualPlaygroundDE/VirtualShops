@@ -1,9 +1,8 @@
-package de.virtualplayground.shop.config;
+package de.virtualplayground.shop.player.config;
 
 import de.virtualplayground.lib.config.ConfigHandler;
-import de.virtualplayground.shop.trade.Trade;
-import de.virtualplayground.shop.gui.ShopGui;
-import de.virtualplayground.shop.trade.TradeShop;
+import de.virtualplayground.shop.player.PlayerTrade;
+import de.virtualplayground.shop.player.PlayerShop;
 import lombok.Getter;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -14,12 +13,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 
 @Getter
-public class ShopConfig extends ConfigHandler {
+public class PlayerShopConfig extends ConfigHandler {
 
-    private final HashMap<String, TradeShop> shops = new HashMap<>();
+    private final HashMap<String, PlayerShop> shops = new HashMap<>();
 
-    public ShopConfig(@NotNull JavaPlugin plugin) {
-        super(plugin, "shops");
+    public PlayerShopConfig(@NotNull JavaPlugin plugin) {
+        super(plugin, "players/shops");
     }
 
     @Override
@@ -35,12 +34,12 @@ public class ShopConfig extends ConfigHandler {
 
             if (section != null) {
 
-                TradeShop shop = new TradeShop(name);
+                PlayerShop shop = new PlayerShop(name);
 
                 for (String key : section.getKeys(false)) {
                     ItemStack result = section.getItemStack(key + ".result");
                     ItemStack[] ingredients = section.getList(key + ".ingredients").toArray(new ItemStack[0]);
-                    shop.getTrades().add(new Trade(result, ingredients));
+                    shop.getPlayerTrades().add(new PlayerTrade(result, ingredients));
                 }
 
                 shop.getGui().create();
@@ -61,10 +60,10 @@ public class ShopConfig extends ConfigHandler {
         // Save Shops
         this.shops.forEach((name, shop) -> {
             int tradeCount = 0;
-            for (Trade trade : shop.getTrades()) {
+            for (PlayerTrade playerTrade : shop.getPlayerTrades()) {
                 tradeCount++;
-                config.set(name + "." + tradeCount + ".result", trade.result());
-                config.set(name + "." + tradeCount + ".ingredients", trade.ingredients());
+                config.set(name + "." + tradeCount + ".result", playerTrade.result());
+                config.set(name + "." + tradeCount + ".ingredients", playerTrade.ingredients());
             }
         });
     }
